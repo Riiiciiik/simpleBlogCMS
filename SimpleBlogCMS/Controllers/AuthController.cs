@@ -4,9 +4,9 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
-using SimpleBlog.ViewModels;
+using SimpleBlogCMS.ViewModels;
 
-namespace SimpleBlog.Controllers
+namespace SimpleBlogCMS.Controllers
 {
     public class AuthController : Controller
     {
