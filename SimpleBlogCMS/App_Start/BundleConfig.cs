@@ -8,9 +8,9 @@ namespace SimpleBlogCMS
         // For more information on bundling, visit http://go.microsoft.com/fwlink/?LinkId=301862
         public static void RegisterBundles(BundleCollection bundles)
         {
-            bundles.Add(new StyleBundle("~/admin/styles").Include(
-                      "~/Content/styles/bootstrap.css",
-                      "~/Content/styles/admin.css"));
+            bundles.Add(new StyleBundle("~/admin/styles")
+                .Include("~/Content/styles/bootstrap.css")
+                .Include("~/Content/styles/admin.css"));
 
             bundles.Add(new StyleBundle("~/styles")
                 .Include("~/content/styles/bootstrap.css")

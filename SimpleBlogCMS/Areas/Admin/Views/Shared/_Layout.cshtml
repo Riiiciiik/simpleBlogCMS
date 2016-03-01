@@ -1,0 +1,38 @@
+﻿@using System.Web.Optimization;
+
+@helper SelectedTabClass(string tabName)
+{
+    if (tabName == ViewBag.SelectedTab)
+    {
+        @: active
+    }
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Blog - Admin</title>
+    @Styles.Render("~/admin/styles")
+</head>
+    <body>
+            <nav class="navbar navbar-inverse navbar-static-top">
+                <div class="container">
+                    <ul class="nav navbar-nav">
+                        <li class="@SelectedTabClass("posts")">@Html.ActionLink("Posts", "Index", "Posts", new {area = "admin"}, new {})</li>
+                        <li class="@SelectedTabClass("users")">@Html.ActionLink("Users", "Index", "Users", new {area = "admin"}, new {})</li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>@Html.RouteLink("Back to Website", "Home")</li>
+                    </ul>
+                </div>
+            </nav>
+       
+        <div class="container">
+            @RenderBody()
+        </div>
+
+
+
+        @Scripts.Render("~/admin/scripts")
+        @RenderSection("Scripts", required: false)
+    </body>
+</html>
