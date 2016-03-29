@@ -5,6 +5,11 @@ namespace SimpleBlogCMS.Models
 {
     public class User
     {
+        private const int WorkFactor = 13;
+        public static void FakeHash()
+        {
+            BCrypt.Net.BCrypt.HashPassword("", WorkFactor);
+        }
         public virtual int Id { get; set; }
         public virtual string Username { get; set; }
         public virtual string Email { get; set; }
@@ -12,7 +17,12 @@ namespace SimpleBlogCMS.Models
 
         public virtual void SetPassword(string password)
         {
-            PasswordHash = "IGNORE ME";
+            PasswordHash = BCrypt.Net.BCrypt.HashPassword(password, WorkFactor);
+        }
+
+        public virtual bool CheckPassword(string password)
+        {
+            return BCrypt.Net.BCrypt.Verify(password, PasswordHash);
         }
     }
 
