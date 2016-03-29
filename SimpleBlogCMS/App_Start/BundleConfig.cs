@@ -17,17 +17,18 @@ namespace SimpleBlogCMS
                 .Include("~/content/styles/site.css"));
 
             bundles.Add(new ScriptBundle("~/admin/jquery")
-                        .Include("~/Scripts/jquery-{version}.js")
-                        .Include("~/Scripts/jquery.validate.js")
-                        .Include("~/Scripts/jquery.validate.unobtrusive.js")
-                        .Include("~/Scripts/bootstrap.js")
+                        .Include("~/scripts/jquery-{version}.js")
+                        .Include("~/scripts/jquery.validate.js")
+                        .Include("~/scripts/jquery.validate.unobtrusive.js")
+                        .Include("~/scripts/bootstrap.js")
+                        .Include("~/areas/admin/scripts/forms.js")
                         );
 
             bundles.Add(new ScriptBundle("~/scripts")
-                        .Include("~/Scripts/jquery-{version}.js")
-                        .Include("~/Scripts/jquery.validate*")
-                        .Include("~/Scripts/jquery.validate.unobtrusive.js")
-                        .Include("~/Scripts/bootstrap.js")
+                        .Include("~/scripts/jquery-{version}.js")
+                        .Include("~/scripts/jquery.validate*")
+                        .Include("~/scripts/jquery.validate.unobtrusive.js")
+                        .Include("~/scripts/bootstrap.js")
                         );
 
             //bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(

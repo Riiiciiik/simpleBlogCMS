@@ -1,5 +1,6 @@
 ﻿using System.Web;
 using System.Web.Mvc;
+using SimpleBlogCMS.Infrastructure;
 
 namespace SimpleBlogCMS
 {
@@ -7,6 +8,7 @@ namespace SimpleBlogCMS
     {
         public static void RegisterGlobalFilters(GlobalFilterCollection filters)
         {
+            filters.Add(new TransactionFilter());
             filters.Add(new HandleErrorAttribute());
         }
     }
