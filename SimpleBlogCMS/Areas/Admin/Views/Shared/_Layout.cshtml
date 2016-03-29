@@ -34,5 +34,9 @@
 
         @Scripts.Render("~/admin/jquery")
         @RenderSection("Scripts", required: false)
+
+        <form class="hidden" id ="anti-forgery-form">
+            @Html.AntiForgeryToken()
+        </form>
     </body>
 </html>
