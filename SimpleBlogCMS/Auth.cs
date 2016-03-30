@@ -7,7 +7,7 @@ namespace SimpleBlogCMS
 {
     public static class Auth
     {
-        private const string UserKey = "SumpleBlogCMS.AUth.UserKey";
+        private const string UserKey = "SimpleBlogCMS.Auth.UserKey";
 
         public static User User
         {
