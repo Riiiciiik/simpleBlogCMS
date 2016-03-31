@@ -28,6 +28,8 @@ namespace SimpleBlogCMS
             var mapper = new ModelMapper();
             mapper.AddMapping<UserMap>();
             mapper.AddMapping<RoleMap>();
+            mapper.AddMapping<TagMap>();
+            mapper.AddMapping<PostMap>();
 
             config.AddMapping(mapper.CompileMappingForAllExplicitlyAddedEntities());
 
