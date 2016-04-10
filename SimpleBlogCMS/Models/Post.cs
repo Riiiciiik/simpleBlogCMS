@@ -15,7 +15,7 @@ namespace SimpleBlogCMS.Models
         public virtual string Content { get; set; }
 
         public virtual DateTime CreatedAt { get; set; }
-        public virtual DateTime? UpdateAt { get; set; }
+        public virtual DateTime? UpdatedAt { get; set; }
         public virtual DateTime? DeletedAt { get; set; }
 
 
@@ -49,7 +49,7 @@ namespace SimpleBlogCMS.Models
                 x.NotNullable(true);
             });
 
-            Property(x => x.UpdateAt, x => x.Column("updated_at"));
+            Property(x => x.UpdatedAt, x => x.Column("updated_at"));
             Property(x => x.DeletedAt, x => x.Column("deleted_at"));
 
             Bag(x => x.Tags, x =>
