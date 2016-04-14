@@ -16,13 +16,15 @@ namespace SimpleBlogCMS
                 .Include("~/content/styles/bootstrap.css")
                 .Include("~/content/styles/site.css"));
 
-            bundles.Add(new ScriptBundle("~/admin/jquery")
+            bundles.Add(new ScriptBundle("~/admin/scripts")
                         .Include("~/scripts/jquery-{version}.js")
                         .Include("~/scripts/jquery.validate.js")
                         .Include("~/scripts/jquery.validate.unobtrusive.js")
                         .Include("~/scripts/bootstrap.js")
                         .Include("~/areas/admin/scripts/forms.js")
                         );
+            bundles.Add(new ScriptBundle("~/admin/post/scripts")
+                        .Include("~/areas/admin/scripts/posteditor.js"));
 
             bundles.Add(new ScriptBundle("~/scripts")
                         .Include("~/scripts/jquery-{version}.js")

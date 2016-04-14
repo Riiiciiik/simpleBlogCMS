@@ -23,6 +23,10 @@ namespace SimpleBlogCMS.Models
 
         public virtual  bool IsDeleted { get { return DeletedAt != null; } }
 
+        public Post()
+        {
+            Tags = new List<Tag>();
+        }
     }
 
 

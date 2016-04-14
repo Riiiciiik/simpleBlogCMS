@@ -1,9 +1,18 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using SimpleBlogCMS.Infrastructure;
 using SimpleBlogCMS.Models;
 
 namespace SimpleBlogCMS.Areas.Admin.ViewModels
 {
+
+    public class TagCheckbox
+    {
+        public int? Id { get; set; }
+        public string Name { get; set; }
+        public bool IsChecked { get; set; }
+    }
+
     public class PostsIndex
     {
          public PagedData<Post> Posts { get; set; } 
@@ -22,5 +31,7 @@ namespace SimpleBlogCMS.Areas.Admin.ViewModels
 
         [Required, DataType(DataType.MultilineText)]
         public string Content { get; set; }
+
+        public IList<TagCheckbox> Tags { get; set; } 
     }
 }
