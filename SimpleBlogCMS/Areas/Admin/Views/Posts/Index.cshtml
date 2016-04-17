@@ -45,7 +45,7 @@
             <th>Title</th>
             <th>Author</th>
             <th>Tags</th>
-            <th>Created</th>
+            <th>Date</th>
             <th>Actions</th>
         </tr>
     </thead>
@@ -58,7 +58,7 @@
             {
                 cls = "danger";
             }
-            <tr class="@cls">
+            <tr>
                 <td>@post.Title</td>
                 <td>@post.User.Username</td>
                 <td>@string.Join(",", post.Tags.Select(t => t.Name))</td>
