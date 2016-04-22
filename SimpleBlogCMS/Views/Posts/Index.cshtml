@@ -1,14 +1,7 @@
-﻿@{
+﻿@model SimpleBlogCMS.ViewModels.PostsIndex
+
+@{
     ViewBag.Title = "Posts";
 }
 
-
-<h2>Posts Index</h2>
-<p>
-    <a href="@Url.RouteUrl("login")">Click here to login!</a>
-</p>
-
-<p>
-    @Html.RouteLink("Click here!", "login")
-</p>
-
+@Html.Partial("_Posts", Model.Posts) 
