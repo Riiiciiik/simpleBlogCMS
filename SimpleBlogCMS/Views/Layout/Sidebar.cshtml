@@ -38,19 +38,33 @@
 @if (Model.IsLoggedIn && Model.IsAdmin)
 {
     <div class="panel panel-default">
-        <div class="panel-heading">Vítáme zpět uživatele <b>@Model.Username</b>!</div>
+        <div class="panel-heading">Vítáme zpět uživatele <b>@Model.Username</b>!
+        </div>
         <div class="panel-body">
             <div class="btn-group btn-group-sm">
-                <a href="@Url.Action("index", "posts", new{area = "admin"})" class="btn btn-default">Posts</a>
+                <a href="@Url.Action("index", "posts", new {area = "admin"})" class="btn btn-default">Posts</a>
                 <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
                     <span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu">
                     <li>
-                        <a href="@Url.Action("new", "posts", new{area = "admin"})">Create Post</a>
+                        <a href="@Url.Action("new", "posts", new {area = "admin"})">Create Post</a>
                     </li>
                 </ul>
             </div>
+            <a href="@Url.RouteUrl("logout")" class="btn btn-danger pull-right"><span class="glyphicon glyphicon-log-out"></span> Logout</a>
+
+        </div>
+    </div>
+}
+else
+{
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <b>Přihlásit se</b>
+        </div>
+        <div class="panel-body">
+            <a href="@Url.RouteUrl("login")" class="btn btn-default"><span class="glyphicon glyphicon-log-in"></span> Login</a>
         </div>
     </div>
 }
