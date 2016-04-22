@@ -11,40 +11,31 @@
 
 </head>
     <body>
-        <div class="container">
-            <header>
-                <h1>
-                    <a href="@Url.RouteUrl("home")">Simple Blog</a>
-                    <i class="glyphicon glyphicon-bell"></i>
+        <div class="site-header">
+            <header class="container">
+                <h1 class="page-header">
+                    <a href="@Url.RouteUrl("Home")">Awesome stuff</a>
+                    <small>a simple blog powered by ASP.net MVC</small>
                 </h1>
-                @if (User.Identity.IsAuthenticated)
-                {
-                    <p>Welcome back, @User.Identity.Name!</p>
-                    <p>
-                        <a href="@Url.RouteUrl("logout")">Logout</a>
-                    </p>
-
-                    if (User.IsInRole("admin"))
-                    {
-                        <a href="@Url.Action("index", "Posts", new {area = "admin"})">View posts in admin</a>
-
-                    }
-                }
-                else
-                {
-                    <p><a href="@Url.RouteUrl("login")">Login</a>
-                    </p>
-                }
-
             </header>
-
-            @RenderBody()
-            <hr/>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    @RenderBody()
+                </div>
+                <div class="col-lg-4 sidebar">
+                    @Html.Action("Sidebar", "Layout")
+                </div>
+            </div>
             <footer>
-                <p>&copy; @DateTime.Now.Year by Richard Zevel</p>
+                &copy; @DateTime.Now.Year
             </footer>
+        </div>
+
+
             @Scripts.Render("~/scripts")
             @RenderSection("Scripts", required: false)
-        </div>
+        
 </body>
 </html>
