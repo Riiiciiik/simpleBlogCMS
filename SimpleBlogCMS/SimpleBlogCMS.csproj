@@ -184,6 +184,7 @@
     <Content Include="Scripts\ckeditor\plugins\wsc\README.md" />
     <Content Include="Scripts\ckeditor\README.md" />
     <Content Include="Scripts\ckeditor\skins\moono\readme.md" />
+    <None Include="Properties\PublishProfiles\blog-asp.pubxml" />
     <None Include="Tools\DeployDb-Dev.bat" />
     <Compile Include="ViewModels\Auth.cs" />
     <Content Include="Scripts\Frontend.js" />
